@@ -1,33 +1,61 @@
 pipeline {
-  agent {
-    docker {
-      image 'node:6-alpine'
-      args '-p 3000:3000'
+    agent any
+    stages {
+        stage('Build') {
+            stages {
+                stage('portal test') {
+                    steps { pwd()}
+                }
+            }
+            stages {
+                stage('portal build') {
+                    steps { pwd()}
+                }
+            }
+        }
+        stage('Deploy pp') {
+            stages {
+                stage('deploy') {
+                    steps { pwd()}
+                }
+            }
+            stages {
+                stage('release') {
+                    steps { pwd()}
+                }
+            }
+            stages {
+                stage('release release check') {
+                    steps { pwd()}
+                }
+            }
+            stages {
+                stage('test smoke') {
+                    steps { pwd()}
+                }
+            }
+        }
+        stage('Deploy p') {
+            stages {
+                stage('deploy') {
+                    steps { pwd()}
+                }
+            }
+            stages {
+                stage('release') {
+                    steps { pwd()}
+                }
+            }
+            stages {
+                stage('release release check') {
+                    steps { pwd()}
+                }
+            }
+            stages {
+                stage('test smoke') {
+                    steps { pwd()}
+                }
+            }
+        }
     }
-
-  }
-  stages {
-    stage('Build') {
-      steps {
-        sh 'npm install'
-      }
-    }
-
-    stage('Test') {
-      environment {
-        CI = 'true'
-      }
-      steps {
-        sh './jenkins/scripts/test.sh'
-      }
-    }
-
-    stage('Deliver') {
-      steps {
-        sh './jenkins/scripts/deliver.sh'
-        input 'Finished using the web site? (Click "Proceed" to continue)'
-      }
-    }
-
-  }
 }
