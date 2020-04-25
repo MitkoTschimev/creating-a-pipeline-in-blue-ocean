@@ -6,8 +6,6 @@ pipeline {
                 stage('portal test') {
                     steps { pwd()}
                 }
-            }
-            stages {
                 stage('portal build') {
                     steps { pwd()}
                 }
@@ -18,18 +16,12 @@ pipeline {
                 stage('deploy') {
                     steps { pwd()}
                 }
-            }
-            stages {
                 stage('release') {
                     steps { pwd()}
                 }
-            }
-            stages {
                 stage('release release check') {
                     steps { pwd()}
                 }
-            }
-            stages {
                 stage('test smoke') {
                     steps { pwd()}
                 }
@@ -40,18 +32,12 @@ pipeline {
                 stage('deploy') {
                     steps { pwd()}
                 }
-            }
-            stages {
                 stage('release') {
                     steps { pwd()}
                 }
-            }
-            stages {
                 stage('release release check') {
                     steps { pwd()}
                 }
-            }
-            stages {
                 stage('test smoke') {
                     steps { pwd()}
                 }
