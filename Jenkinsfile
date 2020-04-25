@@ -4,42 +4,62 @@ pipeline {
         stage('Build') {
             stages {
                 stage('portal test') {
-                    steps { pwd()}
+                    steps {
+                        echo 'executed'
+                    }
                 }
                 stage('portal build') {
-                    steps { pwd()}
+                    steps {
+                        echo 'executed'
+                    }
                 }
             }
         }
         stage('Deploy pp') {
             stages {
                 stage('deploy') {
-                    steps { pwd()}
+                    steps {
+                        echo 'executed'
+                    }
                 }
                 stage('release') {
-                    steps { pwd()}
+                    steps {
+                        echo 'executed'
+                    }
                 }
                 stage('release release check') {
-                    steps { pwd()}
+                    steps {
+                        echo 'executed'
+                    }
                 }
                 stage('test smoke') {
-                    steps { pwd()}
+                    steps {
+                        echo 'executed'
+                    }
                 }
             }
         }
         stage('Deploy p') {
             stages {
                 stage('deploy') {
-                    steps { pwd()}
+                    steps {
+                        echo 'executed'
+                    }
                 }
                 stage('release') {
-                    steps { pwd()}
+                    steps {
+                        echo 'executed'
+                    }
                 }
                 stage('release release check') {
-                    steps { pwd()}
+                    steps {
+                        echo 'executed'
+                    }
                 }
                 stage('test smoke') {
-                    steps { pwd()}
+                    steps {
+                        echo 'executed'
+                    }
                 }
             }
         }
